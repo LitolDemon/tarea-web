@@ -1,0 +1,31 @@
+<form  autocomplete="off" [formGroup]="form" (ngSubmit)="crear()">
+
+    <!--INPUT TITULO -->
+        <label>Titulo</label>
+        <li>
+          <input formControlName="titulo" type="text" required="true">
+          <div *ngIf="titulo.invalid" class="alert alert-danger">
+              <div class="requerido">
+                  Se requiere titulo
+              </div>
+          </div>
+        </li>
+    
+    <!--SELECT ESTADO-->
+    <label>Estado</label>
+    <li>
+      <select formControlName="estado" type="select">
+        <option value="abierta">Iniciado</option>
+        <option value="proceso">En proceso</option>
+        <option value="cerrada">Terminada</option>
+    </select>
+    </li>
+
+    <!--TEXTAREA DESCRIPCION -->
+    <label>Descripcion</label>
+      <textarea class="form-control" id="texto" rows="3" formControlName="texto"></textarea>
+    
+
+    <!--BUTTON SUBMIT -->
+    <button type="submit" mat-flat-button>Actualizar</button>
+</form>
